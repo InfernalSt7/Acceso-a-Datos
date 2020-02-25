@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Create</title>
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div> Inscribir a un ciclista</div>
+<form class="form-group" action="#" th:action="@{/ciclistas/addCiclista}" th:object="${ciclista}" method="post">
+<p>Dorsal: <input class="form-control" type="text" th:field="*{dorsal}" /> </p>
+<p>Nombre: <input class="form-control" type="text" th:field="*{nombre}" /> </p>
+<p> Equipo: <input class="form-control" type="text" th:field="*{equipo.nomeq}" /></p>
+<p> Edad: <input class="form-control" type="text" th:field="*{edad}" /></p>
+<p> <input class="form-control" type="submit" value="submit"> </p>
+</form>
+</body>
+</html>

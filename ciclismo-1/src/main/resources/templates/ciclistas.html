@@ -1,0 +1,47 @@
+<meta charset="utf-8">
+<div class="container">
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+  <div class="title-box">
+    <h1>Ciclistas</h1>
+  </div>
+<form th:action="@{/ciclistas/create}" method="get">
+  <input type="submit" class="btn btn-outline-success btn-lg btn-block" value="Añadir"/>
+</form>
+  <table class="table table-bordered grocery-crud-table table-hover">
+    <thead>
+      <tr>
+        <th>IMG</th>
+        <th>Dorsal</th>
+        <th>Nombre</th>
+        <th>Equipo</th>
+        <th>Edad</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="ciclista: ${ciclistas}">
+        <th>
+        	<img th:src="${ciclista.foto}"/>
+        	<!-- <img th:if="${#strings.lenght(alumno.foto) > 0}" class="img-thumbnail rounded float-left"
+        	style="max-width: 25%;" th:src="@'{/uploads/' + ${alumno.foto}}"
+        	th:alt="{alumno.foto}" />  -->
+        
+        </th>
+        <th th:text="${ciclista.dorsal}">Dorsal</th>
+        <th th:text="${ciclista.nombre}">Nombre</th>
+        <th th:text="${ciclista.equipo.nomeq}">Equipo</th>
+        <th th:text="${ciclista.edad}">Edad</th>
+        <th>
+          <a class="btn btn-default btn-outline-dark" href="">Editar</a>
+          <form action="#"  th:action="@{/ciclistas/delete(dorsal=${ciclista.dorsal})}"  th:object="${ciclista}"  method="post">
+				<input class="btn btn-default btn-outline-danger" type="submit" value="Delete">
+		  </form>
+        </th>
+      </tr>
+		  <a class="btn btn-default btn-outline-warning" role="button" th:href="@{/ciclistas/generarPDF}">PDF</a>
+		  <div class="alert alert-success"  th:if="${success!=null}" th:text="${success}"/>
+    </tbody>
+  </table>
+ 
+
+</div>

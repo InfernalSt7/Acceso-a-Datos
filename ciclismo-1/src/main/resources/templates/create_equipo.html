@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Create</title>
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div> Inscribir a un nuevo equipo</div>
+<form class="form-group" action="#" th:action="@{/equipos/addEquipo}" th:object="${equipo}" method="post" enctype="multipart/form-data">
+<p> Logo: <input class="form-control" type="file" name="imagen"/> </p>
+<p>Nombre: <input class="form-control" type="text" th:field="*{nomeq}" /> </p>
+<p>Director: <input class="form-control" type="text" th:field="*{director}" /> </p>
+<p> <input class="form-control" type="submit" value="submit"> </p>
+</form>
+</body>
+</html>

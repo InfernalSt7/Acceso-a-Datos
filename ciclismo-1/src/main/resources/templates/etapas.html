@@ -1,0 +1,38 @@
+<meta charset="utf-8">
+<div class="container">
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+  <div class="title-box">
+    <h1>Etapas</h1>
+  </div>
+<form th:action="@{/etapas/create}" method="get">
+  <input type="submit" class="btn btn-outline-success btn-lg btn-block" value="Añadir"/>
+</form>
+  <table class="table table-bordered grocery-crud-table table-hover">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Km</th>
+        <th>Salida</th>
+        <th>Llegada</th>
+        <th>Dorsal Ciclista </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="etapa: ${etapas}">
+        <th th:text="${etapa.netapa}">Nombre Etapa</th>
+        <th th:text="${etapa.km}">KM</th>
+        <th th:text="${etapa.salida}">Salida</th>
+        <th th:text="${etapa.llegada}">Llegada</th>
+        <th th:text="${etapa.ciclista.dorsal}">Dorsal Ciclista</th>
+        <th>
+          <a class="btn btn-default btn-outline-dark" href="">Editar</a>
+          <form action="#" th:action="@{/etapas/delete(netapa=${etapa.netapa})}"  th:object="${etapa}" method="post">
+				<input class="btn btn-default btn-outline-danger" type="submit" value="Delete">
+		  </form>
+        </th>
+      </tr>
+    </tbody>
+  </table>
+ 
+
+</div>

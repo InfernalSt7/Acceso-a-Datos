@@ -1,0 +1,43 @@
+<meta charset="utf-8">
+<div class="container">
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+  <div class="title-box">
+    <h1>Equipos</h1>
+  </div>
+<form th:action="@{/equipos/create}" method="get">
+  <input type="submit" class="btn btn-outline-success btn-lg btn-block" value="Añadir"/>
+</form>
+  <table class="table table-bordered grocery-crud-table table-hover">
+    <thead>
+      <tr>
+        <th>IMG</th>
+        <th>Nombre Equipo</th>
+        <th>Director</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="equipo: ${equipos}">
+        <th>
+        	<img th:src="${equipo.logo}"/>
+        	<!-- <img th:if="${#strings.lenght(alumno.foto) > 0}" class="img-thumbnail rounded float-left"
+        	style="max-width: 25%;" th:src="@'{/uploads/' + ${alumno.foto}}"
+        	th:alt="{alumno.foto}" />  -->
+        
+        </th>
+        <th th:text="${equipo.nomeq}">Nombre Equipo</th>
+        <th th:text="${equipo.director}">Director</th>
+        <th>
+          <a class="btn btn-default btn-outline-dark" href="">Editar</a>
+          <form action="#"  th:action="@{/equipos/delete(nomeq=${equipo.nomeq})}"  th:object="${equipo}"  method="post">
+				<input class="btn btn-default btn-outline-danger" type="submit" value="Delete">
+		  </form>
+        </th>
+      </tr>
+      	<a class="btn btn-default btn-outline-warning" role="button" th:href="@{/equipos/generarPDF}">PDF</a>
+		<div class="alert alert-success"  th:if="${success!=null}" th:text="${success}"/>
+    </tbody>
+  </table>
+ 
+
+</div>

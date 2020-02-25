@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Create</title>
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div> Crear una nueva etapa</div>
+<form class="form-group" action="#" th:action="@{/etapas/addEtapa}" th:object="${etapa}" method="post" enctype="multipart/form-data">
+<p>Km: <input class="form-control" type="text" th:field="*{km}" /> </p>
+<p>Salida: <input class="form-control" type="text" th:field="*{salida}" /> </p>
+<p>Llegada: <input class="form-control" type="text" th:field="*{llegada}" /> </p>
+<p>Dorsal: <input class="form-control" type="text" th:field="*{ciclista.dorsal}" /> </p>
+<p> <input class="form-control" type="submit" value="submit"> </p>
+</form>
+</body>
+</html>

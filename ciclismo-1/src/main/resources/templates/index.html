@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>¡Bienvenido!</title>
+
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+
+  <link href="/css/the-big-picture.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <h1 align="center">Ciclismo</h1>
+          <br>
+          <br>
+          <br>
+          <br>
+          <form th:action="@{/login?logout}">
+          	<button class="btn btn-lg btn-primary btn-block" type="submit">Logout</button>
+          </form>
+          <br>
+          <form action="#" th:action="@{/ciclistas/listCiclistas}" method="get">
+	          <input type="submit" class="btn btn-outline-success btn-lg btn-block" value="Ciclistas"/>
+	      </form>
+	      <form action="#" method="get" th:action="@{/equipos/listEquipos}">
+	          <input type="submit" class="btn btn-outline-danger btn-lg btn-block" value="Equipos"/>
+          </form>
+          <form action="#" method="get" th:action="@{/puertos/listPuertos}">
+	          <input type="submit" class="btn btn-outline-warning btn-lg btn-block" value="Puertos"/>
+         </form>
+         <form action="#" method="get" th:action="@{/maillots/listMaillots}">
+         	<input type="submit" class = "btn btn-outline-primary btn-lg btn-block" value="Maillot"/>
+         </form>
+         <form action="#" method="get" th:action="@{/etapas/listEtapas}">
+         	<input type="submit" class= "btn btn-outline-secondary btn-lg btn-block" value="Etapa"/>
+         </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<footer class="page-footer font-small teal pt-4">
+
+  <div class="container-fluid text-center text-md-left">
+
+    <div class="row">
+
+      <div class="col-md-6 mt-md-0 mt-3">
+
+
+        <h5 class="text-uppercase font-weight-bold">CRÉDITOS</h5>
+        <p>Esta página web ha sido creada por Ernesto Calvache Rodríguez, alumno de 2º de CFGS en Desarrollo de Aplicaciones
+        Multiplataforma.</p>
+
+      </div>
+
+      <hr class="clearfix w-100 d-md-none pb-3">
+
+      <div class="col-md-6 mb-md-0 mb-3">
+
+
+        <h5 class="text-uppercase font-weight-bold">CONTÁCTANOS</h5>
+        <ul>
+        	<ol><a href="https://twitter.com/ernestocalrod7">Twitter</a></ol>
+        	<ol><a href="">Facebook</a></ol>
+        	<ol><a href="">Instagram</a></ol>
+        </ul>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+  <div class="footer-copyright text-center py-3">© 2019 Copyright:
+    <a href="https://twitter.com/ernestocalrod7"> Ernesto Calvache</a>
+  </div>
+
+
+</footer>
+
+
+
+  <script src="/jquery/jquery.min.js"></script>
+  <script src="/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<meta charset="utf-8">
+<div class="container">
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+  <div class="title-box">
+    <h1>Puertos</h1>
+  </div>
+<form th:action="@{/puertos/create}" method="get">
+  <input type="submit" class="btn btn-outline-success btn-lg btn-block" value="Añadir"/>
+</form>
+  <table class="table table-bordered grocery-crud-table table-hover">
+    <thead>
+      <tr>
+        <th>Nombre Puerto</th>
+        <th>Altura</th>
+        <th>Categoría</th>
+        <th>Pendiente</th>
+        <th>Nombre de la Etapa</th>
+        <th>Dorsal del Ciclista</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="puerto: ${puertos}">
+        <th th:text="${puerto.nompuerto}"></th>
+        <th th:text="${puerto.altura}"></th>
+        <th th:text="${puerto.categoria}"></th>
+        <th th:text="${puerto.pendiente}"></th>
+        <th th:text="${puerto.etapa.netapa}"></th>
+        <th th:text="${puerto.ciclista.dorsal}"></th>
+        <th>
+          <a class="btn btn-default btn-outline-dark" href="">Editar</a>
+          <form action="#"  th:action="@{/puertos/delete(nompuerto=${puerto.nompuerto})}"  th:object="${puerto}"  method="post">
+				<input class="btn btn-default btn-outline-danger" type="submit" value="Delete">
+		  </form>
+        </th>
+      </tr>
+    </tbody>
+  </table>
+ 
+
+</div>
